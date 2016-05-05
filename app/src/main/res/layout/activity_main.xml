@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.sharath_gm.myweatherapp.MainActivity">
+
+    <TextView
+        android:id="@+id/headline"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp"
+        android:focusableInTouchMode="false"
+        android:gravity="center"
+        android:text="Forecast Search"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvStreet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/headline"
+        android:layout_margin="10dp"
+        android:text="Street"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/etStreet"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvStreet"
+        android:layout_toEndOf="@+id/tvStreet"
+        android:layout_toRightOf="@+id/tvStreet"/>
+
+    <TextView
+        android:id="@+id/tvCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvStreet"
+        android:layout_margin="10dp"
+        android:text="City"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/etCity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvCity"
+        android:layout_toEndOf="@+id/tvCity"
+        android:layout_toRightOf="@+id/tvCity"/>
+
+    <TextView
+        android:id="@+id/tvState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvCity"
+        android:layout_margin="10dp"
+        android:text="State"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/spinnerState"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/tvState"
+        android:layout_toEndOf="@+id/tvState"
+        android:layout_toRightOf="@+id/tvState" />
+
+    <RadioGroup
+        android:id="@+id/radioDegree"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvState"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvDegree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_margin="10dp"
+            android:text="Degree"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rbFah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Fahrenheit"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/rbCel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Celsius"
+            android:textSize="16sp" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/radioDegree"
+        android:text="Search"
+        android:onClick="submitForm"/>
+
+    <Button
+        android:id="@+id/buttonClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/buttonSearch"
+        android:layout_toEndOf="@id/buttonSearch"
+        android:layout_toRightOf="@id/buttonSearch"
+        android:text="Clear"
+        android:onClick="clearScreen"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/errorStr"
+        android:layout_below="@+id/buttonSearch"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textColor="#FF0000"
+        android:layout_centerHorizontal="true"
+        android:focusableInTouchMode="false"
+        android:gravity="center"
+        />
+
+
+    <Button
+        android:id="@+id/buttonAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/errorStr"
+        android:layout_alignParentLeft="true"
+        android:text="About"
+        android:onClick="displayPersonalDetails"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Powered By:"
+        android:id="@+id/poweredBy"
+        android:textSize="20sp"
+        android:layout_below="@+id/errorStr"
+        android:layout_alignRight="@+id/headline"
+        android:layout_alignEnd="@+id/headline" />
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/imageIcon"
+        android:src="@drawable/forecast_logo"
+        android:layout_alignRight="@+id/radioDegree"
+        android:layout_alignEnd="@+id/radioDegree"
+        android:layout_toRightOf="@+id/buttonClear"
+        android:layout_toEndOf="@+id/buttonClear"
+        android:layout_alignTop="@+id/buttonAbout" />
+
+
+</RelativeLayout>

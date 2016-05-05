@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Weather App</string>
+    <string name="title_activity_result_acitivity">ResultAcitivity</string>
+    <string name="facebook_app_id">150006868694388</string>
+</resources>
